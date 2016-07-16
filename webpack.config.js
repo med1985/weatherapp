@@ -4,13 +4,21 @@ var webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry: './main.js',
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'bundle.js'
     },
     devServer: {
         contentBase: "./src",
-        hot: true
+        hot: true,
+        proxy: {
+            '/maps*': {
+                target: 'https://maps.googleapis.com/',
+                secure: false,
+                changeOrigin: true
+            }
+        }
     },
     module: {
         loaders: [
@@ -33,6 +41,9 @@ module.exports = {
 
         ]
     },
+    plugins : [
+        new webpack.HotModuleReplacementPlugin()
+    ],
     sassLoader: {
         includePaths: [path.resolve(__dirname, "./node_modules")]
     }

@@ -1,3 +1,6 @@
-import count from './count'
+import { combineReducers } from 'redux'
+import citySearch from './citySearch'
 
-export { count }
+export default {
+    citySearch
+}

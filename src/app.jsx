@@ -4,18 +4,15 @@ import DockMonitor from 'redux-devtools-dock-monitor'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import * as reducers from './reducers'
+import reducers  from './reducers'
 import { App, Home, Foo, Bar } from './components'
 
-const reducer = combineReducers({
-    ...reducers,
-    routing: routerReducer
-})
 
 const DevTools = createDevTools(
     <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
@@ -23,10 +20,20 @@ const DevTools = createDevTools(
     </DockMonitor>
 )
 
+const rootReducer = combineReducers({
+    ...reducers,
+    routing: routerReducer
+})
+
 const store = createStore(
-    reducer,
-    DevTools.instrument()
+    rootReducer,
+    {},
+    compose(
+        applyMiddleware(thunk),
+        DevTools.instrument()
+    )
 )
+
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(

@@ -1,13 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increase, decrease } from '../actions/count'
+import CityTypeahead from './search/CityTypeahead.jsx'
 
 //({ number, increase, decrease })
 class Home extends React.Component {
     render() {
         return (
-            <div>
-                
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div className='col-sm-12'>
+                        City:  <CityTypeahead />
+                    </div>
+                </div>
 
             </div>
         )
@@ -15,6 +19,6 @@ class Home extends React.Component {
 }
 
 export default connect(
-    state => ({ number: state.count.number }),
-    { increase, decrease }
+    state => ({}),
+    {  }
 )(Home)
