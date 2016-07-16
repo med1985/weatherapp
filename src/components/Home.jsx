@@ -7,10 +7,8 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                Some state changes:
-                {this.props.number}
-                <button onClick={() => this.props.increase(1)}>Increase</button>
-                <button onClick={() => this.props.decrease(1)}>Decrease</button>
+                
+
             </div>
         )
     }

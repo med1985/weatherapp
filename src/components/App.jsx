@@ -1,25 +1,16 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router'
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
-        const { router } = this.props;
         return <div>
-                <header>
-                    Links:
-                    {' '}
-                    <Link to="/">Home</Link>
-                    {' '}
-                    <Link to="/foo">Foo</Link>
-                    {' '}
-                    <Link to="/bar">Bar</Link>
+                <header className='navbar nav-bar-default'>
+                    <div className='container-fluid'>
+                        <ul className='nav navbar-nav'>
+                            <li><a>Weather App</a></li>
+                        </ul>
+                    </div>
                 </header>
-                <div>
-                    <button onClick={() => router.push('/foo')}>Go to /foo</button>
-                </div>
                 <div style={{ marginTop: '1.5em' }}>{this.props.children}</div>
             </div>
     }
 }
-
-export default withRouter(App);

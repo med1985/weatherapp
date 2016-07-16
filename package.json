@@ -1,5 +1,5 @@
 {
-  "name": "react-starter",
+  "name": "weatherapp",
   "version": "1.0.0",
   "description": "Get started with React, Redux, and React-Router!",
   "main": "index.js",
@@ -13,7 +13,8 @@
     "react-redux": "4.4.5",
     "react-router": "2.5.2",
     "react-router-redux": "4.0.5",
-    "redux": "3.5.2"
+    "redux": "3.5.2",
+    "bootstrap-sass": "3.3.6"
   },
   "devDependencies": {
     "webpack": "1.13.1",
@@ -24,6 +25,11 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-1": "6.5.0",
     "redux-devtools": "3.3.1",
+    "node-sass": "3.8.0",
+    "sass-loader": "4.0.0",
+    "style-loader": "0.13.1",
+    "css-loader": "0.23.1",
+    "file-loader": "0.9.0",
     "babel-plugin-transform-object-rest-spread": "6.8.0",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.4"
