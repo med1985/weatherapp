@@ -1,4 +1,4 @@
-import { RECV_SEARCH_CITY } from '../constants'
+import { RECV_SEARCH_CITY, RESET_SEARCH } from '../constants'
 
 const initialState = {
     city: ''
@@ -9,6 +9,11 @@ export default function citySearch(state = initialState, action) {
         case RECV_SEARCH_CITY: {
             return Object.assign({}, state, {
                 cities: action.response.predictions
+            });
+        }
+        case RESET_SEARCH: {
+            return Object.assign({}, state, {
+                cities: []
             });
         }
     }

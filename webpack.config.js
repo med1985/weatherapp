@@ -3,7 +3,10 @@ var webpack = require('webpack');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: './main.js',
+    entry : [
+        'webpack-hot-middleware/client',
+        './main.js'
+    ],
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'build'),
@@ -15,6 +18,11 @@ module.exports = {
         proxy: {
             '/maps*': {
                 target: 'https://maps.googleapis.com/',
+                secure: false,
+                changeOrigin: true
+            },
+            '/data*': {
+                target: 'http://api.openweathermap.org',
                 secure: false,
                 changeOrigin: true
             }
@@ -42,7 +50,9 @@ module.exports = {
         ]
     },
     plugins : [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
     ],
     sassLoader: {
         includePaths: [path.resolve(__dirname, "./node_modules")]

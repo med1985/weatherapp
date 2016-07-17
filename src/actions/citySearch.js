@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch'
-import { FETCH_SEARCH_CITY, RECV_SEARCH_CITY } from '../constants'
+import { FETCH_SEARCH_CITY, RECV_SEARCH_CITY, RESET_SEARCH } from '../constants'
 
 export function fetchCitySearch(city) {
     return {
@@ -14,6 +14,13 @@ export function receiveCitySearch(response) {
         response: response
     }
 }
+
+export function resetSearch() {
+    return {
+        type: RESET_SEARCH
+    }
+}
+
 export function autoCompleteCity(city) {
     return function (dispatch) {
         dispatch(fetchCitySearch(city))

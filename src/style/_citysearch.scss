@@ -1,0 +1,10 @@
+citysearch {
+  .typeahead-selector {
+    list-style: none;
+    border: 1px solid lightgrey;
+
+    .hover {
+      background-color: lightblue;
+    }
+  }
+}

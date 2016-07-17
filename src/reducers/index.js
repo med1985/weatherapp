@@ -1,6 +1,7 @@
-import { combineReducers } from 'redux'
 import citySearch from './citySearch'
+import weather from './weather'
 
 export default {
-    citySearch
+    citySearch,
+    weather
 }

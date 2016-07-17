@@ -6,7 +6,7 @@ export default class App extends React.Component {
                 <header className='navbar nav-bar-default'>
                     <div className='container-fluid'>
                         <ul className='nav navbar-nav'>
-                            <li><a>Weather App</a></li>
+                            <li><h2>Weather App</h2></li>
                         </ul>
                     </div>
                 </header>

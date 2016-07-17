@@ -11,7 +11,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import reducers  from './reducers'
-import { App, Home, Foo, Bar } from './components'
+import { App, Home } from './components'
 
 
 const DevTools = createDevTools(
@@ -42,8 +42,6 @@ ReactDOM.render(
             <Router history={history}>
                 <Route path="/" component={App}>
                     <IndexRoute component={Home}/>
-                    <Route path="foo" component={Foo}/>
-                    <Route path="bar" component={Bar}/>
                 </Route>
             </Router>
             <DevTools />

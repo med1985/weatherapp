@@ -1,3 +1,7 @@
 export const FETCH_SEARCH_CITY = 'FETCH_SEARCH_CITY';
 export const RECV_SEARCH_CITY = 'RECV_SEARCH_CITY';
-export const DECREASE = 'DECREASE';
+export const RESET_SEARCH = 'RESET_SEARCH';
+
+export const FETCH_WEATHER = 'FETCH_WEATHER';
+export const RECV_WEATHER = 'RECV_WEATHER';
+export const RESET_WEATHER = 'RESET_WEATHER';
