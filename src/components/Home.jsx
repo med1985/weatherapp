@@ -17,7 +17,6 @@ class Home extends React.Component {
                 <div className='row'>
                     <FiveDay forecast={weather.forecast} />
                 </div>
-
             </div>
         )
     }

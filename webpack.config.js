@@ -4,7 +4,8 @@ var webpack = require('webpack');
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     entry : [
-        'webpack-hot-middleware/client',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
         './main.js'
     ],
     devtool: 'source-map',
@@ -32,11 +33,8 @@ module.exports = {
         loaders: [
             {
                 test: /.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                }
+                loaders: ['react-hot','babel-loader'],
+                exclude: /node_modules/
             },
             {
                 test: /\.scss$/,
