@@ -9,6 +9,8 @@ Then to start up webpack dev server run:
 npm start
 
 Then open a browser and open: http://localhost:8080/
+Or if you want hot-reloading: http://localhost:8080/webpack-dev-server/
+(Try this, then make a change to one of the React-files, HMR is awesome)
 
 To run the tests run:
 
