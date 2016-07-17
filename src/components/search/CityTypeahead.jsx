@@ -37,6 +37,7 @@ class CityTypeahead extends React.Component {
                     onKeyUp={() => this.debouncedSearch()}
                     onKeyPress={() => this.debouncedSearch()}
                     maxVisible={10}
+                    placeholder='Search for a city...'
                     onOptionSelected={this.optionSelectedBind}
                     displayOption='description'
                     filterOption={(opt) => opt}

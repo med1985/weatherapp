@@ -4,7 +4,8 @@
   "description": "Get started with React, Redux, and React-Router!",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha --compilers js:babel-core/register --require test/bootstrap.js --recursive"
+    "test": "node_modules/.bin/mocha --compilers js:babel-core/register --require test/bootstrap.js --recursive",
+    "start": "node_modules/.bin/webpack-dev-server --hot --progress --colors"
   },
   "engines": {
     "node": ">=4.2.0",
