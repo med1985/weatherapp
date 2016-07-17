@@ -1,5 +1,11 @@
 # weatherapp
 
+You need to make sure you have the latest versions of Node/NPM:
+node --version
+v6.3.0
+npm --version
+3.10.3
+
 To install all the npm dependencies you need to run:
 
 npm install
